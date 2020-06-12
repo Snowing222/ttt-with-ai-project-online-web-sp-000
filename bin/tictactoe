@@ -14,7 +14,12 @@ elsif player_number==1
   while who_is_first!="C"&&who_is_first!="H"
   puts "Should Computer or Human go first? Please enter 'C' or 'H'"
   who_is_first=gets.strip
+<<<<<<< HEAD
   end
+=======
+end
+
+>>>>>>> 6cc185ac2f821bd5e2398d9f340a2baa5cd851e4
 
   if who_is_first=="H"
     Game.new(Players::Human.new("X"),Players::Computer.new("O"),Board.new).play
