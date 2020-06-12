@@ -47,7 +47,7 @@ class Game
 
   def play
     while !over?
-      puts "Please input your next move"
+      puts "Please select a square by entering 1-9, 1 for the top left and 9 for the bottom right:"
       turn
     end
     puts "Congratulations #{winner}!" if won?
