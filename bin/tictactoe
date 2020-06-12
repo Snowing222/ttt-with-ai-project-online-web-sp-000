@@ -2,31 +2,29 @@
 
 require_relative '../config/environment'
 
-puts "Welcome to Tic-tac-toe!"
-puts "what kind of game do you want to play? 0, 1, or 2 player? Please enter 0, 1,or 2 accordingly!"
-player_number=gets.strip.to_i until [0,1,2].include?(player_number)
+puts "Welcome to Tic-tac-toe! Would you like to play?(y/n)"
+player_input=gets.strip until ["y","n","Y","N","Yes","No","YES","NO"].include?(player_input)
 
-
-if player_number==0
-  Game.new(Players::Computer.new("X"),Players::Computer.new("O"),Board.new).play
-elsif player_number==1
-  who_is_first=""
-  while who_is_first!="C"&&who_is_first!="H"
-  puts "Should Computer or Human go first? Please enter 'C' or 'H'"
-  who_is_first=gets.strip
-<<<<<<< HEAD
-  end
-=======
-end
-
->>>>>>> 6cc185ac2f821bd5e2398d9f340a2baa5cd851e4
-
-  if who_is_first=="H"
-    Game.new(Players::Human.new("X"),Players::Computer.new("O"),Board.new).play
-  elsif who_is_first=="C"
-    Game.new(Players::Computer.new("X"),Players::Human.new("O"),Board.new).play
+if ["y","Y","Yes","YES"].include?(player)
+  puts "Great! what kind of game do you want to play? 0, 1, or 2 player? Please enter 0, 1,or 2 accordingly!"
+  player_number=gets.strip.to_i until [0,1,2].include?(player_number)
+  if player_number==0
+    Game.new(Players::Computer.new("X"),Players::Computer.new("O"),Board.new).play
+  elsif player_number==1
+    who_is_first=""
+    while who_is_first!="C"&&who_is_first!="H"
+    puts "Should Computer or Human go first? Please enter 'C' or 'H'"
+    who_is_first=gets.strip
+    end
+    if who_is_first=="H"
+      Game.new(Players::Human.new("X"),Players::Computer.new("O"),Board.new).play
+    elsif who_is_first=="C"
+      Game.new(Players::Computer.new("X"),Players::Human.new("O"),Board.new).play
+    end
+  else
+    Game.new.play
   end
 
 else
-  Game.new.play
+  puts "Alright, See you next time then!"
 end
