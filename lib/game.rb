@@ -42,6 +42,7 @@ class Game
       puts "This is turn #{board.turn_count+1}\n"
       board.update(current_move,current_player)
       board.display
+      sleep 3
     end
   end
 
